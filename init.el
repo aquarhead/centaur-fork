@@ -52,20 +52,12 @@
               (add-hook 'focus-out-hook 'garbage-collect))))
 
 ;; Load path
-;; Optimize: Force "lisp"" and "site-lisp" at the head to reduce the startup time.
+;; Optimize: Force "lisp"" at the head to reduce the startup time.
 (defun update-load-path (&rest _)
   "Update `load-path'."
-  (push (expand-file-name "site-lisp" user-emacs-directory) load-path)
   (push (expand-file-name "lisp" user-emacs-directory) load-path))
 
-(defun add-subdirs-to-load-path (&rest _)
-  "Add subdirectories to `load-path'."
-  (let ((default-directory
-          (expand-file-name "site-lisp" user-emacs-directory)))
-    (normal-top-level-add-subdirs-to-load-path)))
-
 (advice-add #'package-initialize :after #'update-load-path)
-(advice-add #'package-initialize :after #'add-subdirs-to-load-path)
 
 (update-load-path)
 
@@ -104,7 +96,6 @@
 
 (require 'init-markdown)
 (require 'init-org)
-(require 'init-elfeed)
 
 (require 'init-utils)
 
@@ -116,10 +107,6 @@
 (require 'init-dap)
 
 (require 'init-emacs-lisp)
-(require 'init-c)
-(require 'init-go)
-(require 'init-python)
-(require 'init-ruby)
 (require 'init-web)
 (require 'init-prog)
 

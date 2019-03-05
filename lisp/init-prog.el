@@ -91,11 +91,7 @@
   :bind (("C-<f5>" . quickrun)
          ("C-c x" . quickrun)))
 
-(use-package cask-mode)
-(use-package csharp-mode)
 (use-package dockerfile-mode)
-(use-package powershell)
-(use-package vimrc-mode)
 (use-package rmsbolt)                   ; A compiler output viewer
 
 ;; New `conf-toml-mode' in Emacs 26
@@ -112,11 +108,6 @@
   :diminish bmx-mode
   :hook (after-init . bmx-mode-setup-defaults))
 
-(use-package fish-mode
-  :hook (fish-mode . (lambda ()
-                       (add-hook 'before-save-hook
-                                 #'fish_indent-before-save))))
-
 (use-package swift-mode
   :config
   (use-package flycheck-swift
@@ -126,11 +117,6 @@
 
 (use-package rust-mode
   :config (setq rust-format-on-save t))
-
-(use-package robot-mode
-  :ensure nil
-  :commands robot-mode
-  :mode "\\.robot\\'")
 
 (provide 'init-prog)
 
