@@ -61,12 +61,11 @@
     :init (dashboard-setup-startup-hook)
     :config
     (setq initial-buffer-choice (lambda () (get-buffer dashboard-buffer-name)))
-    (setq dashboard-banner-logo-title "CENTAUR EMACS - Enjoy Programming & Writing")
+    (setq dashboard-banner-logo-title "CENTAUR FORK - Empowered by Open Source")
     (setq dashboard-startup-banner (or centaur-logo 'official))
     (setq dashboard-show-shortcuts nil)
-    (setq dashboard-items '((recents  . 10)
-                            (bookmarks . 5)
-                            (projects . 5)))
+    (setq dashboard-items '((projects  . 8)
+                            (recents . 13)))
 
     (defun my-banner-path (&rest _)
       "Return the full path to banner."
