@@ -110,5 +110,8 @@
 (require 'init-web)
 (require 'init-prog)
 
+;; AQD Specials
+(require 'init-aquarhead)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
